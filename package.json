@@ -1,0 +1,19 @@
+{
+  "name": "zip-to-qrvideo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dfanso",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "jimp": "^0.22.10",
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.3"
+  }
+}
