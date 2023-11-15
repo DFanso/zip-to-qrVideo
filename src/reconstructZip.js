@@ -4,9 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory containing the extracted QR code images
-const framesDirectory = path.join(__dirname, 'extracted_frames');
+const framesDirectory = path.join(__dirname, 'output/extracted_frames');
 // Path for the reconstructed ZIP file
-const outputZipPath = path.join(__dirname, 'reconstructed_zipfile.zip');
+const outputZipPath = path.join(__dirname, 'output/reconstructed_zipfile.zip');
 
 async function reconstructZipFromQR() {
     try {

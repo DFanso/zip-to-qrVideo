@@ -125,3 +125,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+src/.DS_Store
+Arsene_Lupin-Maurice_Leblanc.pdf.zip

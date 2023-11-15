@@ -8,7 +8,7 @@ const fs = require('fs');
 const [operation, filePath] = process.argv.slice(2);
 
 // Directory where QR code images will be saved
-const qrImagesDir = path.join(__dirname, 'qr_images');
+const qrImagesDir = path.join(__dirname, 'output/qr_images');
 if (!fs.existsSync(qrImagesDir)){
     fs.mkdirSync(qrImagesDir);
 }
@@ -30,7 +30,7 @@ async function processZipFile(zipFilePath) {
 
         // 3. Create Video from QR Code Images
         console.log('Creating video from QR code images...');
-        const videoPath = path.join(__dirname, 'output_video.mp4');
+        const videoPath = path.join(__dirname, 'output/output_video.mp4');
         await videoEncoder.createVideoFromImages(qrImagesDir, videoPath);
 
         console.log(`Video created at ${videoPath}`);
@@ -41,8 +41,8 @@ async function processZipFile(zipFilePath) {
 // Function to decode Video to ZIP
 async function decodeVideoToZip(videoFilePath) {
     try {
-        const framesDirectory = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/src/extracted_frames'; // Ensure this directory exists
-        const outputZipPath = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/src/IMG-20200922-WA0046.jpg.zip'; // Set the desired output path
+        const framesDirectory = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/src/output/extracted_frames'; // Ensure this directory exists
+        const outputZipPath = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/src/output/'; // Set the desired output path
 
         console.log('Extracting frames from video...');
         await videoDecoder.extractFramesFromVideo(videoFilePath, framesDirectory);
@@ -74,7 +74,8 @@ async function decodeVideoToZip(videoFilePath) {
 }
 
 // Example Usage
-const zipFilePath = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/IMG-20200922-WA0046.jpg.zip'; // Replace with your ZIP file path
+const zipFilePath = '/Users/dfanso/Programming/GitHub/zip-to-qrVideo/Arsene_Lupin-Maurice_Leblanc.pdf.zip'; // Replace with your ZIP file path
+const videoFilePath ='/Users/dfanso/Programming/GitHub/zip-to-qrVideo/src/output/output_video.mp4' 
 
 
 switch (operation) {
@@ -82,7 +83,7 @@ switch (operation) {
         processZipFile(zipFilePath).catch(console.error);
         break;
     case 'decode':
-        decodeVideoToZip(filePath).catch(console.error);
+        decodeVideoToZip(videoFilePath).catch(console.error);
         break;
     default:
         console.log('Please specify the operation (encode or decode) and the file path.');
