@@ -38,7 +38,12 @@ change the video file path and
 ```bash
 node src/index.js decode
 ```
-This will extract the QR codes from the video and reconstruct the ZIP file.
+This will extract the QR codes from the video.
+
+To reconstruct the ZIP file.
+```bash
+node src/reconstructZip.js
+```
 
 ## Structure
 - `src/helpers`: Contains utility functions for ZIP and QR code processing.
