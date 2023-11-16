@@ -16,7 +16,7 @@ This project provides a unique solution for encoding ZIP files into a series of 
 ## Installation
 Clone the repository and install dependencies:
 ```bash
-git clone [your-repo-link](https://github.com/DFanso/zip-to-qrVideo)
+git clone https://github.com/DFanso/zip-to-qrVideo
 cd zip-to-qrVideo
 npm install
 ```
